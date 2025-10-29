@@ -87,7 +87,6 @@ class VideoMetadataReader(private val context: Context) {
       val location = extractGPSLocation(retriever)
       val orientation = getOrientation(rotation, width, height)
 
-      // ---- Track info ----
       var audioChannels: Int? = null
       var audioSampleRate: Int? = null
       var audioCodec: String? = null

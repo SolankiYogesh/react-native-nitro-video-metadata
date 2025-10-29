@@ -21,7 +21,6 @@ class NitroVideoMetadata: HybridNitroVideoMetadataSpec {
   func getVideoInfoAsync(source: String, options: VideoInfoOptions) throws -> NitroModules.Promise<VideoInfoResult> {
     let promise = NitroModules.Promise<VideoInfoResult>()
     
-    // Handle both file:// and URL types
     let inputURL: URL?
     if source.starts(with: "file://") {
       inputURL = URL(fileURLWithPath: source.replacingOccurrences(of: "file://", with: ""))
@@ -83,7 +82,6 @@ class NitroVideoMetadata: HybridNitroVideoMetadataSpec {
     return promise
   }
 
-  // MARK: - Handle ph:// and file://
   private func resolveVideoURL(_ uri: URL, completion: @escaping (URL?) -> Void) {
     if uri.scheme == "ph" {
       let assetID = uri.absoluteString.replacingOccurrences(of: "ph://", with: "")
