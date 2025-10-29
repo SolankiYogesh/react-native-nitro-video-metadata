@@ -1,4 +1,4 @@
-package nitrovideometadata.example
+package com.nitrovideometadataexample
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
