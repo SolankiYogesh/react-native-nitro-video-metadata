@@ -1,9 +1,16 @@
 import { NitroModules } from 'react-native-nitro-modules';
-import type { NitroVideoMetadata } from './NitroVideoMetadata.nitro';
+import type {
+  NitroVideoMetadata,
+  VideoInfoOptions,
+  VideoInfoResult,
+} from './NitroVideoMetadata.nitro';
 
 const NitroVideoMetadataHybridObject =
   NitroModules.createHybridObject<NitroVideoMetadata>('NitroVideoMetadata');
 
-export function multiply(a: number, b: number): number {
-  return NitroVideoMetadataHybridObject.multiply(a, b);
+export function getVideoInfoAsync(
+  source: string,
+  options: VideoInfoOptions
+): Promise<VideoInfoResult> {
+  return NitroVideoMetadataHybridObject.getVideoInfoAsync(source, options);
 }
