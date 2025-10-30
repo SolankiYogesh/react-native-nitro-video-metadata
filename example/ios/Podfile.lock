@@ -37,7 +37,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
-  - NitroVideoMetadata (0.1.0):
+  - NitroVideoMetadata (0.2.0):
     - boost
     - DoubleConversion
     - fast_float
@@ -2659,7 +2659,7 @@ SPEC CHECKSUMS:
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
   hermes-engine: 273e30e7fb618279934b0b95ffab60ecedb7acf5
   NitroModules: ca848159e82a7e9ae956ffe26c34a11631e6176b
-  NitroVideoMetadata: db88fb8b270e535ac6ba5ad9479ccc66743129d4
+  NitroVideoMetadata: 39758e2664594a04bec73e9b633c8247f7a5b3dc
   RCT-Folly: 846fda9475e61ec7bcbf8a3fe81edfcaeb090669
   RCTDeprecation: f17e2ebc07876ca9ab8eb6e4b0a4e4647497ae3a
   RCTRequired: e2c574c1b45231f7efb0834936bd609d75072b63

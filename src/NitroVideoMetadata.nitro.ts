@@ -17,7 +17,7 @@ export type VideoInfoResult = {
   hasAudio: boolean;
   /**
    * Available only on iOS >= 14 and Android. Tells if the video is a HDR video.
-   * Will return null if it could not be determined. (e.g. on Web or on older iOS/Android versions)
+   * Will return null if it could not be determined. (e.g. on older iOS/Android versions)
    */
   isHDR: boolean | null;
   /**
@@ -30,7 +30,7 @@ export type VideoInfoResult = {
   height: number;
   /**
    * Frame rate of the video in frames per second.
-   * Works on iOS, Android and Web (except Safari).
+   * Works on iOS and Android (except Safari).
    */
   fps: number;
   /**
@@ -45,12 +45,12 @@ export type VideoInfoResult = {
   fileSize: number;
   /**
    * Video codec.
-   * Supported on all platforms, but on Web it may return an empty string.
+   * Supported on all platforms
    */
   codec: string;
   /**
    * Video orientation.
-   * Supported on all platforms, but on Web it may return an empty string.
+   * Supported on all platforms
    * Orientation takes into account both the natural dimensions AND any rotation/transform applied to the video:
    * - Portrait: The video is in portrait mode.
    * - PortraitUpsideDown: The video is in portrait mode, but upside down.

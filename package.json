@@ -1,7 +1,7 @@
 {
   "name": "react-native-nitro-video-metadata",
   "version": "0.2.0",
-  "description": "Module to retrieve metadata from a video with Web, Expo and React Native with nitro modules",
+  "description": "Module to retrieve metadata from a video supports Expo and React Native with nitro modules",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {

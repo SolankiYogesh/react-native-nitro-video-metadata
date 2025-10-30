@@ -1,11 +1,11 @@
 # react-native-nitro-video-metadata
 
-A high-performance React Native library for extracting comprehensive video metadata across iOS, Android, and Web platforms. Built with [Nitro Modules](https://nitro.margelo.com/) for optimal performance.
+A high-performance React Native library for extracting comprehensive video metadata across iOS and Android platforms. Built with [Nitro Modules](https://nitro.margelo.com/) for optimal performance.
 
 ## Features
 
 - 🎥 **Extract comprehensive video metadata** including duration, dimensions, codec, bitrate, and more
-- 🌐 **Cross-platform support** for iOS, Android, and Web
+- 🌐 **Cross-platform support** for iOS and Android
 - ⚡ **High performance** using native modules via Nitro Modules
 - 📱 **Local and remote videos** support from device storage or URLs
 - 🎯 **TypeScript support** with full type definitions
@@ -124,25 +124,25 @@ const videoInfo = await getVideoInfoAsync('https://example.com/video.mp4', {
 
 Returns a promise that resolves to a `VideoInfoResult` object with the following properties:
 
-| Property             | Type                        | Description                                   | Platform Support                  |
-| -------------------- | --------------------------- | --------------------------------------------- | --------------------------------- |
-| `duration`           | `number`                    | Duration in seconds (float)                   | All                               |
-| `hasAudio`           | `boolean`                   | Whether video has audio track                 | All                               |
-| `isHDR`              | `boolean \| null`           | HDR video detection                           | iOS ≥14, Android                  |
-| `width`              | `number`                    | Video width in pixels                         | All                               |
-| `height`             | `number`                    | Video height in pixels                        | All                               |
-| `fps`                | `number`                    | Frame rate (frames per second)                | iOS, Android, Web (except Safari) |
-| `bitRate`            | `number`                    | Bit rate in bits per second                   | All                               |
-| `fileSize`           | `number`                    | File size in bytes (0 for remote files)       | All                               |
-| `codec`              | `string`                    | Video codec                                   | All                               |
-| `orientation`        | `string`                    | Video orientation (Portrait, Landscape, etc.) | All                               |
-| `naturalOrientation` | `string`                    | Natural orientation without rotation          | All                               |
-| `aspectRatio`        | `number`                    | Aspect ratio                                  | All                               |
-| `is16_9`             | `boolean`                   | Whether video is 16:9 aspect ratio            | All                               |
-| `audioSampleRate`    | `number`                    | Audio sample rate (samples per second)        | All                               |
-| `audioChannels`      | `number`                    | Audio channel count                           | All                               |
-| `audioCodec`         | `string`                    | Audio codec                                   | All                               |
-| `location`           | `VideoLocationType \| null` | GPS location data                             | iOS, Android                      |
+| Property             | Type                        | Description                                   | Platform Support             |
+| -------------------- | --------------------------- | --------------------------------------------- | ---------------------------- |
+| `duration`           | `number`                    | Duration in seconds (float)                   | All                          |
+| `hasAudio`           | `boolean`                   | Whether video has audio track                 | All                          |
+| `isHDR`              | `boolean \| null`           | HDR video detection                           | iOS ≥14, Android             |
+| `width`              | `number`                    | Video width in pixels                         | All                          |
+| `height`             | `number`                    | Video height in pixels                        | All                          |
+| `fps`                | `number`                    | Frame rate (frames per second)                | iOS, Android (except Safari) |
+| `bitRate`            | `number`                    | Bit rate in bits per second                   | All                          |
+| `fileSize`           | `number`                    | File size in bytes (0 for remote files)       | All                          |
+| `codec`              | `string`                    | Video codec                                   | All                          |
+| `orientation`        | `string`                    | Video orientation (Portrait, Landscape, etc.) | All                          |
+| `naturalOrientation` | `string`                    | Natural orientation without rotation          | All                          |
+| `aspectRatio`        | `number`                    | Aspect ratio                                  | All                          |
+| `is16_9`             | `boolean`                   | Whether video is 16:9 aspect ratio            | All                          |
+| `audioSampleRate`    | `number`                    | Audio sample rate (samples per second)        | All                          |
+| `audioChannels`      | `number`                    | Audio channel count                           | All                          |
+| `audioCodec`         | `string`                    | Audio codec                                   | All                          |
+| `location`           | `VideoLocationType \| null` | GPS location data                             | iOS, Android                 |
 
 #### VideoLocationType
 
@@ -167,12 +167,6 @@ type VideoLocationType = {
 - Comprehensive metadata extraction
 - HDR video detection support
 - Location data extraction
-
-### Web
-
-- Basic metadata support (duration, dimensions, codec)
-- Limited frame rate detection (not available in Safari)
-- File size returns 0 for remote videos
 
 ## Error Handling
 
@@ -265,11 +259,7 @@ const processVideo = async (videoUri: string) => {
    - For local files, ensure proper file permissions
    - For remote videos, check network connectivity
 
-3. **Missing metadata on Web**
-   - Some metadata (FPS, fileSize for remote videos) may not be available on Web
-   - Consider platform-specific fallbacks
-
-4. **Performance issues with large videos**
+3. **Performance issues with large videos**
    - Metadata extraction is fast, but consider using worker threads for very large files
    - Cache metadata results when possible
 
